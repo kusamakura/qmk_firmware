@@ -1,0 +1,31 @@
+// Basic
+COMB(C_ESC,     KC_ESC,             KC_Q, KC_W)
+COMB(C_TAB,     KC_TAB,             KC_W, KC_F)
+COMB(C_ENT_L,   KC_ENTER,           KC_F, MOD_T)
+COMB(C_ENT_R,   KC_ENTER,           KC_U, MOD_N)
+COMB(C_COL,     KC_COLON,           SYM_M, KC_COMMA)
+COMB(C_SCOL,    KC_SCOLON,          KC_COMMA, KC_DOT)
+COMB(C_VRSN,    VERSION,            MOD_Z, KC_X, SYM_C, NUM_V)
+
+// Editing
+COMB(C_DEL,         KC_DEL,             KC_Y, KC_QUOTE)
+COMB(C_BKSP,        KC_BSPACE,          KC_U, KC_Y)
+COMB(C_BKSP_WORD,   KC_BWORD,           KC_L, KC_U, KC_Y)
+COMB(C_BKSP_LINE,   KC_BLINE,           KC_L, KC_U, KC_Y, KC_QUOTE)
+COMB(C_UNDO,        KC_UNDO,            MOD_Z, KC_X)
+COMB(C_CUT,         KC_CUT,             KC_X, SYM_C)
+COMB(C_COPY,        KC_COPY,            SYM_C, NUM_V)
+COMB(C_PASTE,       KC_PASTE,           NUM_V, KC_B)
+
+// Nav
+COMB(C_LINE_START,  LGUI(KC_LEFT),    KC_DOWN, KC_LEFT)
+COMB(C_LINE_END,    LGUI(KC_RIGHT),   KC_DOWN, KC_RIGHT)
+COMB(C_HOME,        KC_HOME,          KC_UP, KC_LWORD)
+COMB(C_END,         KC_END,           KC_UP, KC_RWORD)
+
+// Sticky mods
+COMB(C_LCK_OFF,     LCK_OFF,          NAV_SPC, KC_W, KC_F, KC_P)
+COMB(C_LCK_SHIFT,   LCK_SHIFT,        NAV_SPC, MOD_R, MOD_I)
+COMB(C_LCK_CTRL,    LCK_CTRL,         NAV_SPC, MOD_S, MOD_E)
+COMB(C_LCK_ALT,     LCK_ALT,          NAV_SPC, MOD_A, MOD_O)
+COMB(C_LCK_CMD,     LCK_CMD,          NAV_SPC, MOD_T, MOD_N)
