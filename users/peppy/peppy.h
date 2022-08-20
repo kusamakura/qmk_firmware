@@ -89,11 +89,12 @@ enum userspace_custom_keycodes {
 #define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS, KC_LCBR, KC_RCBR, KC_SLASH
 
 // SYM
-#define ___LEFT_SYM_ROW2___      XXXX, KC_BTN1, KC_MS_U, KC_BTN2, XXXX
-#define ___LEFT_SYM_ROW3___      XXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXX
-#define ___LEFT_SYM_ROW4___      XXXX, IJ_LINE_UP, IJ_LINE_DN, XXXX, XXXX
-#define ___RGHT_SYM_ROW2___         XXXX, KC_ENDASH, KC_EMDASH, XXXX, XXXX
-#define ___RGHT_SYM_ROW3___         XXXX, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
+// Mouse wheel up and down is reversed to counter mac's natural scrolling mode
+#define ___LEFT_SYM_ROW2___      KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, XXXX
+#define ___LEFT_SYM_ROW3___      KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, IJ_LINE_UP
+#define ___LEFT_SYM_ROW4___      XXXX,    KC_WH_L, KC_BTN3, KC_WH_R, IJ_LINE_DN
+#define ___RGHT_SYM_ROW2___         XXXX,   KC_ENDASH, KC_EMDASH, XXXX, XXXX
+#define ___RGHT_SYM_ROW3___         XXXX,   KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
 #define ___RGHT_SYM_ROW4___         M_LARR, M_RARR, M_FLARR, M_FRARR
 
 // NUM
