@@ -11,14 +11,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  ___LEFT_BASE_ROW2___,      ___RGHT_BASE_ROW2___, KC_BSPC,
     KC_ESC,  ___LEFT_BASE_ROW3___,      ___RGHT_BASE_ROW3___, KC_SCLN,
     KC_LSFT, ___LEFT_BASE_ROW4___,      ___RGHT_BASE_ROW4___, KC_SLSH, KC_RSFT,
-      XXXX, NAV_SPC, KC_ENT, XXXX,      KC_BSPC, NAV_SPC, NAV_SPC, XXXX
+        MO(_SYM), NAV_SPC, KC_ENT, XXXX,      KC_BSPC, NAV_SPC, NAV_SPC, XXXX
   ),
 
   [_NAV] = LAYOUT_wrapper(
-    RESET, ___LEFT_NAV_ROW2___,       ___RGHT_NAV_ROW2___, VVVV,
-    VVVV,  ___LEFT_NAV_ROW3___,       ___RGHT_NAV_ROW3___, VVVV,
-    VVVV,  ___LEFT_NAV_ROW4___,       ___RGHT_NAV_ROW4___, VVVV, VVVV,
-        VVVV, VVVV, VVVV, VVVV,       VVVV, VVVV, VVVV, VVVV
+    VVVV, ___LEFT_NAV_ROW2___,       ___RGHT_NAV_ROW2___, VVVV,
+    VVVV, ___LEFT_NAV_ROW3___,       ___RGHT_NAV_ROW3___, VVVV,
+    VVVV, ___LEFT_NAV_ROW4___,       ___RGHT_NAV_ROW4___, VVVV, VVVV,
+        VVVV, VVVV, VVVV, RESET,     VVVV, VVVV, VVVV, VVVV
   ),
 
   [_SYM] = LAYOUT_wrapper(
