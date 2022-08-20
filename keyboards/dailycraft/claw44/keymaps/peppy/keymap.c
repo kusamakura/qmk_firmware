@@ -6,12 +6,14 @@
 // clang-format off
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
+#define CAD_ROT LSFT(KC_BTN3)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_wrapper(
-    KC_TAB,  ___LEFT_BASE_ROW2___,      ___RGHT_BASE_ROW2___, KC_BSPC,
-    KC_ESC,  ___LEFT_BASE_ROW3___,      ___RGHT_BASE_ROW3___, KC_SCLN,
-    KC_LSFT, ___LEFT_BASE_ROW4___,      ___RGHT_BASE_ROW4___, KC_SLSH, KC_RSFT,
-        MO(_SYM), NAV_SPC, KC_ENT, XXXX,      KC_BSPC, NAV_SPC, NAV_SPC, XXXX
+    KC_TAB,  ___LEFT_BASE_ROW2___,                ___RGHT_BASE_ROW2___, KC_BSPC,
+    KC_ESC,  ___LEFT_BASE_ROW3___,                ___RGHT_BASE_ROW3___, KC_SCLN,
+    KC_LSFT, ___LEFT_BASE_ROW4___,                ___RGHT_BASE_ROW4___, KC_SLSH, KC_RSFT,
+        MO(_SYM), NAV_SPC, KC_ENT, CAD_ROT,   KC_BSPC, NAV_SPC, NAV_SPC, XXXX
   ),
 
   [_NAV] = LAYOUT_wrapper(
