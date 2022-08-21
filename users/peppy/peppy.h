@@ -26,7 +26,21 @@ enum userspace_custom_keycodes {
   M_RARR, // ->
   M_FLARR, // <=
   M_FRARR, // =>
+  TD_PARENS,
+  TD_BRACKS,
+  TD_BRACES,
+  TD_LARR,
+  TD_RARR,
   NEW_SAFE_RANGE
+};
+
+// Tap dance
+enum {
+  _TD_PARENS, // Tap = (, double tap = )
+  _TD_BRACKS, // Tap = [, double tap = ]
+  _TD_BRACES, // Tap = {, double tap = }
+  _TD_LARR, // Tap = <-, double tap = <=
+  _TD_RARR, // Tap = ->, double tap = =>
 };
 
 // General keycodes
@@ -46,6 +60,12 @@ enum userspace_custom_keycodes {
 #define NUM_V     LT(_NUM, KC_V)
 #define NUM_K     LT(_NUM, KC_K)
 #define SYM_M     LT(_SYM, KC_M)
+
+#define TD_PARENS  TD(_TD_PARENS)
+#define TD_BRACKS  TD(_TD_BRACKS)
+#define TD_BRACES  TD(_TD_BRACES)
+#define TD_LARR    TD(_TD_LARR)
+#define TD_RARR    TD(_TD_RARR)
 
 // Shortcuts
 #define KC_BWORD          LALT(KC_BSPACE)
@@ -86,16 +106,16 @@ enum userspace_custom_keycodes {
 #define ___LEFT_NAV_ROW4___      KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, KC_FNAV
 #define ___RGHT_NAV_ROW2___         IJ_CURSOR_ACTION, IJ_CURSOR_MENU, IJ_OPT_IMPORTS, KC_COLON, KC_SCOLON
 #define ___RGHT_NAV_ROW3___         IJ_SELECT_MORE, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC
-#define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS, KC_LCBR, KC_RCBR, KC_SLASH
+#define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS, VVVV, VVVV, KC_SLASH
 
 // SYM
 // Mouse wheel up and down is reversed to counter mac's natural scrolling mode
 #define ___LEFT_SYM_ROW2___      KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, XXXX
 #define ___LEFT_SYM_ROW3___      KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, IJ_LINE_UP
 #define ___LEFT_SYM_ROW4___      XXXX,    KC_WH_L, KC_BTN3, KC_WH_R, IJ_LINE_DN
-#define ___RGHT_SYM_ROW2___         XXXX,   KC_ENDASH, KC_EMDASH, XXXX, XXXX
-#define ___RGHT_SYM_ROW3___         XXXX,   KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
-#define ___RGHT_SYM_ROW4___         M_LARR, M_RARR, M_FLARR, M_FRARR
+#define ___RGHT_SYM_ROW2___         TD_BRACKS, KC_ENDASH, KC_EMDASH, XXXX, XXXX
+#define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
+#define ___RGHT_SYM_ROW4___         TD_BRACES, TD_LARR, TD_RARR, VVVV
 
 // NUM
 #define ___LEFT_NUM_ROW2___      XXXX, XXXX, XXXX, XXXX, XXXX
