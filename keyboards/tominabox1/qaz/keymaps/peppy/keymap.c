@@ -32,6 +32,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___LEFT_NUM_ROW2___, ___RGHT_NUM_ROW2___,
     ___LEFT_NUM_ROW3___, ___RGHT_NUM_ROW3___,
     ___LEFT_NUM_ROW4___, ___RGHT_NUM_ROW4___,
-          VVVV, VVVV, VVVV, VVVV, VVVV
+       KC_MPRV, KC_MNXT, VVVV, VVVV, VVVV
   )
 };
