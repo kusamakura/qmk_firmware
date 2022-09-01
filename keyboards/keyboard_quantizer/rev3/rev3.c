@@ -60,11 +60,11 @@ void send_reset_cmd(void) {
     hid_info_cnt = 0;
     device_cnt   = 0;
 
-    uart_putchar('\n');
+    uart_write('\n');
     _delay_ms(10);
-    uart_putchar('k');
-    uart_putchar('r');
-    uart_putchar('\n');
+    uart_write('k');
+    uart_write('r');
+    uart_write('\n');
 }
 
 #ifdef CH559_BOOTLOADER_ENABLE
@@ -73,11 +73,11 @@ static void send_bootloader_cmd(void) {
     hid_info_cnt = 0;
     device_cnt   = 0;
 
-    uart_putchar('\n');
+    uart_write('\n');
     _delay_ms(100);
-    uart_putchar('k');
-    uart_putchar('b');
-    uart_putchar('\n');
+    uart_write('k');
+    uart_write('b');
+    uart_write('\n');
 }
 #endif
 
@@ -109,11 +109,11 @@ __attribute__((weak)) uint8_t update_indicator_led(void) {
 
 static void blink_indicator_led(uint8_t led)
 {
-    uart_putchar('\n');
+    uart_write('\n');
     _delay_us(50);
-    uart_putchar(0x80 | (led & 0x07));
+    uart_write(0x80 | (led & 0x07));
     _delay_us(50);
-    uart_putchar('\n');
+    uart_write('\n');
 }
 #endif
 
@@ -170,13 +170,13 @@ void virtser_recv(const uint8_t ch) {
         uart_init(57600);
 
         // send dummy byte
-        uart_putchar(0);
+        uart_write(0);
     }
 #endif
 
     if (ch559_update_mode) {
         // pass through received virtser data to uart
-        uart_putchar(ch);
+        uart_write(ch);
     } else {
         // process received data for simple console
         process_char(ch);
@@ -187,7 +187,7 @@ void matrix_scan_kb() {
     if (ch559_update_mode) {
         // pass through received uart data to virtser
         while (uart_available()) {
-            virtser_send(uart_getchar());
+            virtser_send(uart_read());
         }
     } else {
 #ifdef QUANTIZER_INDICATOR_ENABLE

@@ -1,0 +1,3 @@
+#pragma once
+
+#define QUANTIZER_REPORT_PARSER REPORT_PARSER_FIXED

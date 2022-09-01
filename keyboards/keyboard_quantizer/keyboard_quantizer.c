@@ -23,7 +23,10 @@
 #include "string.h"
 #include "uart.h"
 #include "quantum.h"
-#include "pointing_device.h"
+
+#ifdef POINTING_DEVICE_ENABLE
+    #include "pointing_device.h"
+#endif
 
 #ifndef QUANTIZER_REPORT_PARSER
 #    define QUANTIZER_REPORT_PARSER REPORT_PARSER_DEFAULT
@@ -219,6 +222,7 @@ __attribute__((weak)) void keyboard_report_hook(keyboard_parse_result_t const* r
 bool mouse_send_flag = false;
 
 __attribute__((weak)) void mouse_report_hook(mouse_parse_result_t const* report) {
+#ifdef POINTING_DEVICE_ENABLE
     if (debug_enable) {
         xprintf("Mouse report\n");
         xprintf("b:%d ", report->button);
@@ -241,18 +245,22 @@ __attribute__((weak)) void mouse_report_hook(mouse_parse_result_t const* report)
     mouse.h += report->h;
 
     pointing_device_set_report(mouse);
+#endif
 }
 
 void pointing_device_task(void) {
+#ifdef POINTING_DEVICE_ENABLE
     if (mouse_send_flag) {
         pointing_device_send();
         mouse_send_flag = false;
     }
+#endif
 }
 
 void vendor_report_parser(uint16_t usage_id, hid_report_member_t const *member, uint8_t const *data,
                      uint8_t len)
 {
+#ifdef POINTING_DEVICE_ENABLE
     // For Lenovo thinkpad keyboard(17ef:6047)
     // TODO: restriction by VID:PID
     if (usage_id == 0xFFA1) {
@@ -260,6 +268,7 @@ void vendor_report_parser(uint16_t usage_id, hid_report_member_t const *member, 
         mouse.h = (data[0] & 0x80 ? 0xFF00 : 0) | data[0];
         mouse_report_hook(&mouse);
     }
+#endif
 }
 
 void system_report_hook(uint16_t report) {
@@ -290,7 +299,7 @@ bool process_packet(matrix_row_t current_matrix[]) {
     // process all available packet
     while (uart_available()) {
         while (uart_available()) {
-            uint8_t c = uart_getchar();
+            uint8_t c = uart_read();
 
             // process SLIP
             if (c == SLIP_END) {

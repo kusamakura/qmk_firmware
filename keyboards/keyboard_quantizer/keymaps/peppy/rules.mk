@@ -1,0 +1,4 @@
+BOOTMAGIC_ENABLE = no
+CONSOLE_ENABLE = no
+VIRTSER_ENABLE = no # to avoid EP count limit
+OLED_DRIVER_ENABLE = no
