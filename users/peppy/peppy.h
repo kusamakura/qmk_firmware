@@ -109,13 +109,13 @@ enum {
 #define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS, VVVV, VVVV, KC_SLASH
 
 // SYM
-// Mouse wheel up and down is reversed to counter mac's natural scrolling mode
+// Mouse wheel keys are reversed to compensate for mac's natural scrolling direction
 #define ___LEFT_SYM_ROW2___      KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, XXXX
 #define ___LEFT_SYM_ROW3___      KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, IJ_LINE_UP
-#define ___LEFT_SYM_ROW4___      XXXX,    KC_WH_L, KC_BTN3, KC_WH_R, IJ_LINE_DN
-#define ___RGHT_SYM_ROW2___         TD_BRACKS, KC_ENDASH, KC_EMDASH, XXXX, XXXX
+#define ___LEFT_SYM_ROW4___      XXXX,    KC_WH_R, KC_BTN3, KC_WH_L, IJ_LINE_DN
+#define ___RGHT_SYM_ROW2___         TD_BRACES, KC_ENDASH, KC_EMDASH, XXXX, XXXX
 #define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
-#define ___RGHT_SYM_ROW4___         TD_BRACES, TD_LARR, TD_RARR, VVVV
+#define ___RGHT_SYM_ROW4___         TD_BRACKS, VVVV, TD_LARR, TD_RARR
 
 // NUM
 #define ___LEFT_NUM_ROW2___      XXXX, XXXX, XXXX, XXXX, XXXX

@@ -10,6 +10,18 @@ void toggle_sticky_mod(uint16_t mod_keycode) {
   }
 }
 
+uint16_t SHIFT_TERM = TAPPING_TERM - (TAPPING_TERM >= 180 ? 30 : 10);
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case MOD_R: // Home row shifts
+    case MOD_I:
+      return SHIFT_TERM;
+    default:
+      return TAPPING_TERM;
+  }
+}
+
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
