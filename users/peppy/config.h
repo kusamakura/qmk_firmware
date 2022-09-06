@@ -41,7 +41,7 @@
 #endif
 #define MOUSEKEY_DELAY 10
 #define MOUSEKEY_INTERVAL 16
-#define MOUSEKEY_MOVE_DELTA 3.5
+#define MOUSEKEY_MOVE_DELTA 3.5 // This breaks quantum/command.c:608 %d expects int
 #define MOUSEKEY_MAX_SPEED 5
 #define MOUSEKEY_TIME_TO_MAX 10
 #define MOUSEKEY_WHEEL_DELAY 16
