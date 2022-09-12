@@ -1,13 +1,11 @@
-# Yakiimo Rev A
+# Yakiimo Prototype
 
 * Keyboard Maintainer: [4pplet](https://github.com/4pplet)
-* Hardware Supported: Yakiimo Rev A
-
-If your PCB is of revision A1, use the "proto" code in the Yakiimo directory
+* Hardware Supported: Yakiimo Rev A Prototype
 
 Make example for this keyboard (after setting up your build environment):
 
-    make 4pplet/yakiimo/rev_a:via:flash
+    make 4pplet/yakiimo/proto:default
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
