@@ -10,15 +10,31 @@ void toggle_sticky_mod(uint16_t mod_keycode) {
   }
 }
 
-uint16_t SHIFT_TERM = TAPPING_TERM - (TAPPING_TERM >= 180 ? 30 : 10);
+// Home row mod terms
+uint16_t HR_ALT_TERM   = TAPPING_TERM - (TAPPING_TERM >= 180 ? 30 : 15);
+uint16_t HR_SHIFT_TERM = TAPPING_TERM - (TAPPING_TERM >= 180 ? 30 : 15);
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case MOD_R: // Home row shifts
+    case MOD_A:
+    case MOD_O:
+      return HR_ALT_TERM;
+    case MOD_R:
     case MOD_I:
-      return SHIFT_TERM;
+      return HR_SHIFT_TERM;
     default:
       return TAPPING_TERM;
+  }
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case MOD_R:
+      return (get_mods() & MOD_BIT(KC_LSFT));
+    case MOD_I:
+      return (get_mods() & MOD_BIT(KC_RSFT));
+    default:
+      return false;
   }
 }
 

@@ -104,15 +104,15 @@ enum {
 #define ___LEFT_NAV_ROW2___      KC_PGUP, KC_LWORD, KC_UP, KC_RWORD, IJ_GOTO_PARENS
 #define ___LEFT_NAV_ROW3___      KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_BNAV
 #define ___LEFT_NAV_ROW4___      KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, KC_FNAV
-#define ___RGHT_NAV_ROW2___         IJ_CURSOR_ACTION, IJ_CURSOR_MENU, IJ_OPT_IMPORTS, KC_COLON, KC_SCOLON
-#define ___RGHT_NAV_ROW3___         IJ_SELECT_MORE, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC
-#define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS, VVVV, VVVV, KC_SLASH
+// Mouse wheel keys are reversed to compensate for mac's natural scrolling direction
+#define ___RGHT_NAV_ROW2___         IJ_CURSOR_ACTION, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_D
+#define ___RGHT_NAV_ROW3___         IJ_SELECT_MORE,   KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U
+#define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS,   XXXX,    KC_BTN3, KC_SLASH
 
 // SYM
-// Mouse wheel keys are reversed to compensate for mac's natural scrolling direction
-#define ___LEFT_SYM_ROW2___      KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, XXXX
-#define ___LEFT_SYM_ROW3___      KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, IJ_LINE_UP
-#define ___LEFT_SYM_ROW4___      XXXX,    KC_WH_R, KC_BTN3, KC_WH_L, IJ_LINE_DN
+#define ___LEFT_SYM_ROW2___      XXXX, IJ_CURSOR_MENU, IJ_OPT_IMPORTS, XXXX, XXXX
+#define ___LEFT_SYM_ROW3___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_UP
+#define ___LEFT_SYM_ROW4___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_DN
 #define ___RGHT_SYM_ROW2___         TD_BRACES, KC_ENDASH, KC_EMDASH, XXXX, XXXX
 #define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
 #define ___RGHT_SYM_ROW4___         TD_BRACKS, VVVV, TD_LARR, TD_RARR

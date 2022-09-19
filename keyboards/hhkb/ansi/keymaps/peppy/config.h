@@ -4,7 +4,7 @@
 
 #ifdef TAPPING_TERM
 #  undef TAPPING_TERM
-#  define TAPPING_TERM 200
+#  define TAPPING_TERM 180
 #endif
 
 #ifdef COMBO_TERM
