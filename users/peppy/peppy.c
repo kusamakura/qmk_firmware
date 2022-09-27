@@ -11,8 +11,9 @@ void toggle_sticky_mod(uint16_t mod_keycode) {
 }
 
 // Home row mod terms
-uint16_t HR_ALT_TERM   = TAPPING_TERM - (TAPPING_TERM >= 180 ? 30 : 15);
-uint16_t HR_SHIFT_TERM = TAPPING_TERM - (TAPPING_TERM >= 180 ? 30 : 15);
+uint16_t HR_ALT_TERM   = TAPPING_TERM + 30;
+uint16_t HR_LSHIFT_TERM = TAPPING_TERM - 20;
+uint16_t HR_RSHIFT_TERM = TAPPING_TERM + 20;
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
@@ -20,8 +21,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     case MOD_O:
       return HR_ALT_TERM;
     case MOD_R:
+      return HR_LSHIFT_TERM;
     case MOD_I:
-      return HR_SHIFT_TERM;
+      return HR_RSHIFT_TERM;
     default:
       return TAPPING_TERM;
   }
