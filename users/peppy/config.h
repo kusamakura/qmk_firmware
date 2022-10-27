@@ -10,7 +10,7 @@
 #ifdef TAPPING_TERM
   #undef TAPPING_TERM
 #endif
-#define TAPPING_TERM 160
+#define TAPPING_TERM 150
 
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD

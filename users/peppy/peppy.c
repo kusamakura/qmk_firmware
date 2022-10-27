@@ -10,13 +10,16 @@ void toggle_sticky_mod(uint16_t mod_keycode) {
   }
 }
 
-// Home row mod terms
-uint16_t HR_ALT_TERM   = TAPPING_TERM + 30;
+// Modtap terms
+uint16_t NAV_SPC_TERM   = TAPPING_TERM + 20;
+uint16_t HR_ALT_TERM    = TAPPING_TERM + 30;
 uint16_t HR_LSHIFT_TERM = TAPPING_TERM - 20;
 uint16_t HR_RSHIFT_TERM = TAPPING_TERM + 20;
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case NAV_SPC:
+      return NAV_SPC_TERM;
     case MOD_A:
     case MOD_O:
       return HR_ALT_TERM;
