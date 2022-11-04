@@ -118,7 +118,7 @@ enum {
 #define ___RGHT_SYM_ROW4___         TD_BRACKS, VVVV, TD_LARR, TD_RARR
 
 // NUM
-#define ___LEFT_NUM_ROW2___      XXXX, XXXX, XXXX, XXXX, XXXX
+#define ___LEFT_NUM_ROW2___      XXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXX
 #define ___LEFT_NUM_ROW3___      KC_1, KC_2, KC_3, KC_4, KC_5
 #define ___LEFT_NUM_ROW4___      KC_6, KC_7, KC_8, KC_9, KC_0
 #define ___RGHT_NUM_ROW2___         XXXX, XXXX, IJ_CURSOR_TEST, IJ_CURRENT_TEST, IJ_BUILD
