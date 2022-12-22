@@ -1,5 +1,7 @@
 #pragma once
 
+#define USB_POLLING_INTERVAL_MS 1
+
 #define COMBO_VARIABLE_LEN
 #define COMBO_TERM 30
 #define COMBO_TERM_PER_COMBO

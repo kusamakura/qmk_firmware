@@ -17,8 +17,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAV] = LAYOUT_wrapper(
     ___LEFT_NAV_ROW2___, ___RGHT_NAV_ROW2___,
     ___LEFT_NAV_ROW3___, ___RGHT_NAV_ROW3___,
-    ___LEFT_NAV_ROW4___, ___RGHT_NAV_ROW4___, RESET,
-             VVVV, VVVV, VVVV, VVVV
+    ___LEFT_NAV_ROW4___, ___RGHT_NAV_ROW4___, VVVV,
+             VVVV, VVVV, VVVV, RESET
   ),
 
   [_SYM] = LAYOUT_wrapper(

@@ -46,7 +46,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   switch (combo->keycode) {
     case KC_DOWN:
-      return COMBO_TERM + 30;
+      return COMBO_TERM + 40;
   }
 
   return COMBO_TERM;
