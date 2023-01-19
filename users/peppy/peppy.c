@@ -16,6 +16,9 @@ uint16_t HR_ALT_TERM    = TAPPING_TERM + 30;
 uint16_t HR_LSHIFT_TERM = TAPPING_TERM - 20;
 uint16_t HR_RSHIFT_TERM = TAPPING_TERM + 20;
 
+// Combo terms
+uint16_t COMBO_TERM_KC_DOWN = COMBO_TERM + 50;
+
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case NAV_SPC:
@@ -46,7 +49,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   switch (combo->keycode) {
     case KC_DOWN:
-      return COMBO_TERM + 40;
+      return COMBO_TERM_KC_DOWN;
   }
 
   return COMBO_TERM;
