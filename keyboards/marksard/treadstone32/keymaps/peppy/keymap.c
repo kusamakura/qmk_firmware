@@ -17,21 +17,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAV] = LAYOUT_wrapper(
     ___LEFT_NAV_ROW2___, ___RGHT_NAV_ROW2___,
     ___LEFT_NAV_ROW3___, ___RGHT_NAV_ROW3___,
-    ___LEFT_NAV_ROW4___, ___RGHT_NAV_ROW4___, RESET,
+    ___LEFT_NAV_ROW4___, ___RGHT_NAV_ROW4___, VVVV,
                    VVVV, VVVV
   ),
 
   [_SYM] = LAYOUT_wrapper(
     ___LEFT_SYM_ROW2___, ___RGHT_SYM_ROW2___,
     ___LEFT_SYM_ROW3___, ___RGHT_SYM_ROW3___,
-    ___LEFT_SYM_ROW4___, ___RGHT_SYM_ROW4___, KC_SLASH,
+    ___LEFT_SYM_ROW4___, ___RGHT_SYM_ROW4___, VVVV,
                    VVVV, VVVV
   ),
 
   [_NUM] = LAYOUT_wrapper(
     ___LEFT_NUM_ROW2___, ___RGHT_NUM_ROW2___,
     ___LEFT_NUM_ROW3___, ___RGHT_NUM_ROW3___,
-    ___LEFT_NUM_ROW4___, ___RGHT_NUM_ROW4___, VVVV,
+    ___LEFT_NUM_ROW4___, ___RGHT_NUM_ROW4___, RESET,
                    VVVV, VVVV
   )
 };
