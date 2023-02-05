@@ -1,0 +1,52 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+
+#pragma once
+
+#include "config_common.h"
+
+#define USB_POLLING_INTERVAL_MS 1
+
+#define COMBO_TERM 30
+#define NO_AUTO_SHIFT_ALPHA
+#define AUTO_SHIFT_NO_AUTO_REPEAT
+#define TAPPING_TERM 150
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_FORCE_HOLD
+
+// Mouse keys
+#ifdef MOUSEKEY_DELAY
+  #undef MOUSEKEY_DELAY
+#endif
+#ifdef MOUSEKEY_INTERVAL
+  #undef MOUSEKEY_INTERVAL
+#endif
+#ifdef MOUSEKEY_MOVE_DELTA
+  #undef MOUSEKEY_MOVE_DELTA
+#endif
+#ifdef MOUSEKEY_MAX_SPEED
+  #undef MOUSEKEY_MAX_SPEED
+#endif
+#ifdef MOUSEKEY_TIME_TO_MAX
+  #undef MOUSEKEY_TIME_TO_MAX
+#endif
+#ifdef MOUSEKEY_WHEEL_DELAY
+  #undef MOUSEKEY_WHEEL_DELAY
+#endif
+#ifdef MOUSEKEY_WHEEL_INTERVAL
+  #undef MOUSEKEY_WHEEL_INTERVAL
+#endif
+#ifdef MOUSEKEY_WHEEL_MAX_SPEED
+  #undef MOUSEKEY_WHEEL_MAX_SPEED
+#endif
+#ifdef MOUSEKEY_WHEEL_TIME_TO_MAX
+  #undef MOUSEKEY_WHEEL_TIME_TO_MAX
+#endif
+#define MOUSEKEY_DELAY 10
+#define MOUSEKEY_INTERVAL 16
+#define MOUSEKEY_MOVE_DELTA 3.5 // This breaks quantum/command.c:608 %d expects int
+#define MOUSEKEY_MAX_SPEED 5
+#define MOUSEKEY_TIME_TO_MAX 10
+#define MOUSEKEY_WHEEL_DELAY 16
+#define MOUSEKEY_WHEEL_INTERVAL 16
+#define MOUSEKEY_WHEEL_MAX_SPEED 10
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 40
