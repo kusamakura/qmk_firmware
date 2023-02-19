@@ -3,8 +3,6 @@
 #include "peppy.h"
 #include "g/keymap_combo.h"
 
-#define _GMR 4
-
 // clang-format off
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 

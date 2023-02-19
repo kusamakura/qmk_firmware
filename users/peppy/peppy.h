@@ -6,7 +6,8 @@ enum layers {
   _BASE,
   _NAV,
   _SYM,
-  _NUM
+  _NUM,
+  _GMR
 };
 
 #if defined(VIAL_ENABLED)
