@@ -26,6 +26,8 @@ COMB(C_END,         KC_END,           KC_UP, KC_RWORD)
 COMB(C_MW_L,        KC_WH_L,          KC_MS_R, KC_MS_D)
 COMB(C_MW_R,        KC_WH_R,          KC_MS_L, KC_MS_D)
 COMB(C_AMTH_MAIN,   MEH(KC_M),        NUM_K, SYM_M)
+COMB(C_ALT_TAB,     LALT(KC_TAB),     KC_Q, KC_W, KC_F)
+COMB(C_CMD_TAB,     LGUI(KC_TAB),     KC_W, KC_F, KC_P)
 
 // Sticky mods
 COMB(C_LCK_OFF,     LCK_OFF,          NAV_SPC, KC_W, KC_F, KC_P)
