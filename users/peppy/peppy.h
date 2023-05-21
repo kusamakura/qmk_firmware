@@ -32,6 +32,26 @@ enum userspace_custom_keycodes {
   TD_BRACES,
   TD_LARR,
   TD_RARR,
+  // Caravelle-BLE keycodes
+  AD_WO_L, // Start advertising without whitelist
+  BLE_DIS, // Disable BLE HID sending
+  BLE_EN,  // Enable BLE HID sending
+  USB_DIS, // Disable USB HID sending
+  USB_EN,  // Enable USB HID sending
+  DELBNDS, // Delete all bonding
+  ADV_ID0, // Start advertising to PeerID 0
+  ADV_ID1, // Start advertising to PeerID 1
+  ADV_ID2, // Start advertising to PeerID 2
+  ADV_ID3, // Start advertising to PeerID 3
+  ADV_ID4, // Start advertising to PeerID 4
+  BATT_LV, // Display battery level in milli volts
+  DEL_ID0, // Delete bonding of PeerID 0
+  DEL_ID1, // Delete bonding of PeerID 1
+  DEL_ID2, // Delete bonding of PeerID 2
+  DEL_ID3, // Delete bonding of PeerID 3
+  DEL_ID4, // Delete bonding of PeerID 4
+  ENT_DFU, // Start bootloader
+  ENT_SLP, // Deep sleep mode
   NEW_SAFE_RANGE
 };
 
@@ -80,7 +100,7 @@ enum {
 #define KC_COPY           LGUI(KC_C)
 #define KC_PASTE          LGUI(KC_V)
 #define KC_ENDASH         LALT(KC_MINUS)
-#define KC_EMDASH         LSA(KC_MINUS)
+#define KC_EMDASH         LALT(LSFT(KC_MINUS))
 #define IJ_BUILD          LGUI(KC_F9)
 #define IJ_CURSOR_TEST    LCTL(LSFT(KC_R))
 #define IJ_CURRENT_TEST   LCTL(KC_R)

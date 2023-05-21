@@ -1,5 +1,5 @@
 #include "peppy.h"
-#include "version.h"
+// #include "version.h"
 
 void toggle_sticky_mod(uint16_t mod_keycode) {
   if (get_mods() & MOD_BIT(mod_keycode)) {
@@ -59,13 +59,17 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *
     return true;
 }
 
+#ifndef TAP_CODE_DELAY
+  #define TAP_CODE_DELAY 50
+#endif
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case VERSION: // Prints firmware version
-      if (record->event.pressed) {
-        send_string_with_delay_P(PSTR(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION ", Built on: " QMK_BUILDDATE), TAP_CODE_DELAY);
-      }
-      break;
+    // case VERSION: // Prints firmware version
+    //   if (record->event.pressed) {
+    //     send_string_with_delay_P(PSTR(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION ", Built on: " QMK_BUILDDATE), TAP_CODE_DELAY);
+    //   }
+    //   break;
     case LCK_OFF:
       if (record->event.pressed) {
         clear_mods();
