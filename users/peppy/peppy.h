@@ -89,12 +89,12 @@ enum {
 #define TD_RARR    TD(_TD_RARR)
 
 // Shortcuts
-#define KC_BWORD          LALT(KC_BSPACE)
-#define KC_BLINE          LGUI(KC_BSPACE)
+#define KC_BWORD          LALT(KC_BACKSPACE)
+#define KC_BLINE          LGUI(KC_BACKSPACE)
 #define KC_LWORD          LALT(KC_LEFT)
 #define KC_RWORD          LALT(KC_RIGHT)
-#define KC_BNAV           LGUI(KC_LBRACKET)
-#define KC_FNAV           LGUI(KC_RBRACKET)
+#define KC_BNAV           LGUI(KC_LEFT_BRACKET)
+#define KC_FNAV           LGUI(KC_RIGHT_BRACKET)
 #define KC_UNDO           LGUI(KC_Z)
 #define KC_CUT            LGUI(KC_X)
 #define KC_COPY           LGUI(KC_C)
@@ -135,7 +135,7 @@ enum {
 #define ___LEFT_SYM_ROW3___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_UP
 #define ___LEFT_SYM_ROW4___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_DN
 #define ___RGHT_SYM_ROW2___         TD_BRACES, KC_ENDASH, KC_EMDASH, XXXX, XXXX
-#define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BSLASH
+#define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BACKSLASH
 #define ___RGHT_SYM_ROW4___         TD_BRACKS, VVVV, TD_LARR, TD_RARR
 
 // NUM

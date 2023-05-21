@@ -10,7 +10,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_wrapper(
     ___LEFT_BASE_ROW2___, ___RGHT_BASE_ROW2___,
     ___LEFT_BASE_ROW3___, ___RGHT_BASE_ROW3___,
-    ___LEFT_BASE_ROW4___, ___RGHT_BASE_ROW4___, KC_SLASH,
+    ___LEFT_BASE_ROW4___, ___RGHT_BASE_ROW4___, KC_SLSH,
                  NAV_SPC, NAV_SPC
   ),
 
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUM] = LAYOUT_wrapper(
     ___LEFT_NUM_ROW2___, ___RGHT_NUM_ROW2___,
     ___LEFT_NUM_ROW3___, ___RGHT_NUM_ROW3___,
-    ___LEFT_NUM_ROW4___, ___RGHT_NUM_ROW4___, RESET,
+    ___LEFT_NUM_ROW4___, ___RGHT_NUM_ROW4___, QK_BOOT,
                    VVVV, VVVV
   )
 };

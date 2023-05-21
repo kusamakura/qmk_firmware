@@ -119,7 +119,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return process_record_keymap(keycode, record);
 }
 
-void dance_larr(qk_tap_dance_state_t *state, void *user_data) {
+void dance_larr(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       SEND_STRING("<-");
@@ -130,7 +130,7 @@ void dance_larr(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-void dance_rarr(qk_tap_dance_state_t *state, void *user_data) {
+void dance_rarr(tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
       SEND_STRING("->");
@@ -141,7 +141,7 @@ void dance_rarr(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [_TD_PARENS] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
   [_TD_BRACKS] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
   [_TD_BRACES] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
