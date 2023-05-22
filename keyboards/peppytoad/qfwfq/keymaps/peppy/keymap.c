@@ -4,7 +4,7 @@
 #include "g/keymap_combo.h"
 
 // clang-format off
-#define LAYOUT_wrapper(...) LAYOUT_all(__VA_ARGS__)
+#define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_wrapper(

@@ -9,7 +9,7 @@
 #define XXX KC_NO
 
 /*
-#define LAYOUT_all( \
+#define LAYOUT( \
 	k0A, k0B, k0C, k1D, k1E, k1F, k1G, k0H, k0I, k0J, \
 	k1A, k1B, k1C, k2D, k2E, k2F, k2G, k1H, k1I, k1J, \
 	k2A, k2B, k2C, k3C, k3D, k3G, k3H, k2H, k2I, k2J, \
