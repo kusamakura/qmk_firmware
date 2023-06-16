@@ -122,9 +122,9 @@ enum {
 #define ___RGHT_BASE_ROW4___        NUM_K, SYM_M, KC_COMMA, KC_DOT
 
 // NAV
-#define ___LEFT_NAV_ROW2___      KC_PGUP, KC_LWORD, KC_UP, KC_RWORD, IJ_GOTO_PARENS
-#define ___LEFT_NAV_ROW3___      KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_BNAV
-#define ___LEFT_NAV_ROW4___      KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, KC_FNAV
+#define ___LEFT_NAV_ROW2___      KC_PGUP, KC_LWORD, KC_UP,   KC_RWORD, IJ_GOTO_PARENS
+#define ___LEFT_NAV_ROW3___      KC_PGDN, KC_LEFT,  KC_DOWN, KC_RIGHT, KC_BNAV
+#define ___LEFT_NAV_ROW4___      XXXX,    KC_BTN3,  KC_BTN2, KC_BTN1,  KC_FNAV
 // Mouse wheel keys are reversed to compensate for mac's natural scrolling direction
 #define ___RGHT_NAV_ROW2___         IJ_CURSOR_ACTION, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_D
 #define ___RGHT_NAV_ROW3___         IJ_SELECT_MORE,   KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U
