@@ -36,7 +36,7 @@
 #endif
 
 // Transfer buffer for TWITransmitData()
-uint8_t g_twi_transfer_buffer[65];
+uint8_t g_twi_transfer_buffer[20];
 
 // These buffers match the CKLED2001 PWM registers.
 // The control buffers match the PG0 LED On/Off registers.
@@ -72,26 +72,27 @@ bool CKLED2001_write_register(uint8_t addr, uint8_t reg, uint8_t data) {
 bool CKLED2001_write_pwm_buffer(uint8_t addr, uint8_t *pwm_buffer) {
     // Assumes PG1 is already selected.
     // If any of the transactions fails function returns false.
-    // Transmit PWM registers in 3 transfers of 64 bytes.
+    // Transmit PWM registers in 12 transfers of 16 bytes.
+    // g_twi_transfer_buffer[] is 20 bytes
 
-    // Iterate over the pwm_buffer contents at 64 byte intervals.
-    for (uint8_t i = 0; i < 192; i += 64) {
+    // Iterate over the pwm_buffer contents at 16 byte intervals.
+    for (int i = 0; i < 192; i += 16) {
         g_twi_transfer_buffer[0] = i;
-        // Copy the data from i to i+63.
+        // Copy the data from i to i+15.
         // Device will auto-increment register for data after the first byte
         // Thus this sets registers 0x00-0x0F, 0x10-0x1F, etc. in one transfer.
-        for (uint8_t j = 0; j < 64; j++) {
+        for (int j = 0; j < 16; j++) {
             g_twi_transfer_buffer[1 + j] = pwm_buffer[i + j];
         }
 
 #if CKLED2001_PERSISTENCE > 0
         for (uint8_t i = 0; i < CKLED2001_PERSISTENCE; i++) {
-            if (i2c_transmit(addr << 1, g_twi_transfer_buffer, 65, CKLED2001_TIMEOUT) != 0) {
+            if (i2c_transmit(addr << 1, g_twi_transfer_buffer, 17, CKLED2001_TIMEOUT) != 0) {
                 return false;
             }
         }
 #else
-        if (i2c_transmit(addr << 1, g_twi_transfer_buffer, 65, CKLED2001_TIMEOUT) != 0) {
+        if (i2c_transmit(addr << 1, g_twi_transfer_buffer, 17, CKLED2001_TIMEOUT) != 0) {
             return false;
         }
 #endif
@@ -147,7 +148,7 @@ void CKLED2001_init(uint8_t addr) {
 
 void CKLED2001_set_color(int index, uint8_t red, uint8_t green, uint8_t blue) {
     ckled2001_led led;
-    if (index >= 0 && index < RGB_MATRIX_LED_COUNT) {
+    if (index >= 0 && index < DRIVER_LED_TOTAL) {
         memcpy_P(&led, (&g_ckled2001_leds[index]), sizeof(led));
 
         g_pwm_buffer[led.driver][led.r]          = red;
@@ -158,7 +159,7 @@ void CKLED2001_set_color(int index, uint8_t red, uint8_t green, uint8_t blue) {
 }
 
 void CKLED2001_set_color_all(uint8_t red, uint8_t green, uint8_t blue) {
-    for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
+    for (int i = 0; i < DRIVER_LED_TOTAL; i++) {
         CKLED2001_set_color(i, red, green, blue);
     }
 }

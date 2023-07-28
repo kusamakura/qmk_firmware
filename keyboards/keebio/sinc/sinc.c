@@ -17,7 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sinc.h"
 #include "split_util.h"
 
-#ifdef BACKLIGHT_ENABLE
 bool led_update_kb(led_t led_state) {
     if (!led_update_user(led_state)) { return false; }
     // Only update if left half
@@ -26,7 +25,6 @@ bool led_update_kb(led_t led_state) {
     }
     return true;
 }
-#endif
 
 void eeconfig_init_kb(void) {
 #ifdef BACKLIGHT_ENABLE
@@ -37,7 +35,6 @@ void eeconfig_init_kb(void) {
     eeconfig_init_user();
 }
 
-#ifdef ENCODER_ENABLE
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) { return false; }
     if (index == 0) {
@@ -55,4 +52,3 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     }
     return true;
 }
-#endif

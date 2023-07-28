@@ -41,18 +41,18 @@ void housekeeping_task_keychron(void) {
 
 bool process_record_keychron(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case QK_KB_0:
+        case KC_MISSION_CONTROL:
             if (record->event.pressed) {
-                register_code(KC_MISSION_CONTROL);
+                host_consumer_send(0x29F);
             } else {
-                unregister_code(KC_MISSION_CONTROL);
+                host_consumer_send(0);
             }
             return false;  // Skip all further processing of this key
-        case QK_KB_1:
+        case KC_LAUNCHPAD:
             if (record->event.pressed) {
-                register_code(KC_LAUNCHPAD);
+                host_consumer_send(0x2A0);
             } else {
-                unregister_code(KC_LAUNCHPAD);
+                host_consumer_send(0);
             }
             return false;  // Skip all further processing of this key
         case KC_LOPTN:
