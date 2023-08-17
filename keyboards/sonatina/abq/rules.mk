@@ -1,0 +1,6 @@
+MCU = atmega32u2
+BOOTLOADER = atmel-dfu
+
+BOOTMAGIC_ENABLE = yes
+CONSOLE_ENABLE = no
+MOUSEKEY_ENABLE = yes
