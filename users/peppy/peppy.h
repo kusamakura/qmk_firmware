@@ -63,6 +63,10 @@ enum {
 #define NUM_V     LT(_NUM, KC_V)
 #define NUM_K     LT(_NUM, KC_K)
 #define SYM_M     LT(_SYM, KC_M)
+#define OSM_A     OSM(MOD_LALT)
+#define OSM_R     OSM(MOD_LSFT)
+#define OSM_S     OSM(MOD_LCTL)
+#define OSM_T     OSM(MOD_LGUI)
 
 #define TD_PARENS  TD(_TD_PARENS)
 #define TD_BRACKS  TD(_TD_BRACKS)
@@ -116,7 +120,7 @@ enum {
 
 // SYM
 #define ___LEFT_SYM_ROW2___      XXXX, IJ_CURSOR_MENU, IJ_OPT_IMPORTS, XXXX, XXXX
-#define ___LEFT_SYM_ROW3___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_UP
+#define ___LEFT_SYM_ROW3___      OSM_A, OSM_R, OSM_S, OSM_T, IJ_LINE_UP
 #define ___LEFT_SYM_ROW4___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_DN
 #define ___RGHT_SYM_ROW2___         TD_BRACES, KC_ENDASH, KC_EMDASH, XXXX, XXXX
 #define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BACKSLASH
