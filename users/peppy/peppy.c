@@ -143,4 +143,5 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [_TD_BRACES] = ACTION_TAP_DANCE_DOUBLE(KC_LCBR, KC_RCBR),
   [_TD_LARR]   = ACTION_TAP_DANCE_FN(dance_larr),
   [_TD_RARR]   = ACTION_TAP_DANCE_FN(dance_rarr),
+  [_TD_SLASH_COMMENT] = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, IJ_COMMENT),
 };

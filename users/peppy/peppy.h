@@ -32,6 +32,7 @@ enum userspace_custom_keycodes {
   TD_BRACES,
   TD_LARR,
   TD_RARR,
+  TD_SLASH_COMMENT,
   NEW_SAFE_RANGE
 };
 
@@ -42,6 +43,7 @@ enum {
   _TD_BRACES, // Tap = {, double tap = }
   _TD_LARR, // Tap = <-, double tap = <=
   _TD_RARR, // Tap = ->, double tap = =>
+  _TD_SLASH_COMMENT, // Tap = /, double tap = LGUI(KC_SLASH)
 };
 
 // General keycodes
@@ -67,6 +69,7 @@ enum {
 #define TD_BRACES  TD(_TD_BRACES)
 #define TD_LARR    TD(_TD_LARR)
 #define TD_RARR    TD(_TD_RARR)
+#define TD_SLASH_COMMENT TD(_TD_SLASH_COMMENT)
 
 // Shortcuts
 #define KC_BWORD          LALT(KC_BACKSPACE)
@@ -81,6 +84,7 @@ enum {
 #define KC_PASTE          LGUI(KC_V)
 #define KC_ENDASH         LALT(KC_MINUS)
 #define KC_EMDASH         LSA(KC_MINUS)
+#define IJ_COMMENT        LGUI(KC_SLASH)
 #define IJ_BUILD          LGUI(KC_F9)
 #define IJ_CURSOR_TEST    LCTL(LSFT(KC_R))
 #define IJ_CURRENT_TEST   LCTL(KC_R)
@@ -108,7 +112,7 @@ enum {
 // Mouse wheel keys are reversed to compensate for mac's natural scrolling direction
 #define ___RGHT_NAV_ROW2___         IJ_CURSOR_ACTION, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_D
 #define ___RGHT_NAV_ROW3___         IJ_SELECT_MORE,   KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U
-#define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS,   XXXX,    KC_BTN3, KC_SLASH
+#define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS,   XXXX,    KC_BTN3, TD_SLASH_COMMENT
 
 // SYM
 #define ___LEFT_SYM_ROW2___      XXXX, IJ_CURSOR_MENU, IJ_OPT_IMPORTS, XXXX, XXXX
