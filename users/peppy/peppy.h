@@ -33,6 +33,8 @@ enum userspace_custom_keycodes {
   TD_LARR,
   TD_RARR,
   TD_SLASH_COMMENT,
+  TD_LMAGNET,
+  TD_RMAGNET,
   NEW_SAFE_RANGE
 };
 
@@ -44,6 +46,8 @@ enum {
   _TD_LARR, // Tap = <-, double tap = <=
   _TD_RARR, // Tap = ->, double tap = =>
   _TD_SLASH_COMMENT, // Tap = /, double tap = LGUI(KC_SLASH)
+  _TD_LMAGNET, // Tap = left 1/3, double tap = left 1/2, triple tap = left 2/3
+  _TD_RMAGNET, // Tap = right 1/3, double tap = right 1/2, triple tap = right 2/3
 };
 
 // General keycodes
@@ -74,6 +78,8 @@ enum {
 #define TD_LARR    TD(_TD_LARR)
 #define TD_RARR    TD(_TD_RARR)
 #define TD_SLASH_COMMENT TD(_TD_SLASH_COMMENT)
+#define TD_LMAGNET       TD(_TD_LMAGNET)
+#define TD_RMAGNET       TD(_TD_RMAGNET)
 
 // Shortcuts
 #define KC_BWORD          LALT(KC_BACKSPACE)
@@ -98,8 +104,6 @@ enum {
 #define IJ_LINE_DN        LALT(LSFT(KC_DOWN))
 #define IJ_GOTO_PARENS    LCTL(KC_M)
 #define IJ_CURSOR_ACTION  LALT(KC_ENTER)
-#define IJ_CURSOR_MENU    LCTL(KC_SPACE)
-#define IJ_OPT_IMPORTS    LCTL(LALT(KC_O))
 
 // BASE
 #define ___LEFT_BASE_ROW2___     KC_Q, KC_W, KC_F, KC_P, KC_G
@@ -119,10 +123,10 @@ enum {
 #define ___RGHT_NAV_ROW4___         IJ_SELECT_LESS,   XXXX,    KC_BTN3, TD_SLASH_COMMENT
 
 // SYM
-#define ___LEFT_SYM_ROW2___      XXXX, IJ_CURSOR_MENU, IJ_OPT_IMPORTS, XXXX, XXXX
+#define ___LEFT_SYM_ROW2___      XXXX, XXXX, XXXX, XXXX, XXXX
 #define ___LEFT_SYM_ROW3___      OSM_A, OSM_R, OSM_S, OSM_T, IJ_LINE_UP
 #define ___LEFT_SYM_ROW4___      XXXX, XXXX, XXXX, XXXX, IJ_LINE_DN
-#define ___RGHT_SYM_ROW2___         TD_BRACES, KC_ENDASH, KC_EMDASH, XXXX, XXXX
+#define ___RGHT_SYM_ROW2___         TD_BRACES, KC_ENDASH, KC_EMDASH, TD_LMAGNET, TD_RMAGNET
 #define ___RGHT_SYM_ROW3___         TD_PARENS, KC_MINUS, KC_EQUAL, KC_GRAVE, KC_BACKSLASH
 #define ___RGHT_SYM_ROW4___         TD_BRACKS, VVVV, TD_LARR, TD_RARR
 

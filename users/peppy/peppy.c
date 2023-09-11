@@ -136,6 +136,34 @@ void dance_rarr(qk_tap_dance_state_t *state, void *user_data) {
   }
 }
 
+void dance_lmagnet(qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      register_code16(LCTL(LALT(KC_1)));
+      break;
+    case 2:
+      register_code16(LCTL(LALT(KC_2)));
+      break;
+    case 3:
+      register_code16(LCTL(LALT(KC_3)));
+      break;
+  }
+}
+
+void dance_rmagnet(qk_tap_dance_state_t *state, void *user_data) {
+  switch (state->count) {
+    case 1:
+      register_code16(LCTL(LALT(LSFT(KC_1))));
+      break;
+    case 2:
+      register_code16(LCTL(LALT(LSFT(KC_2))));
+      break;
+    case 3:
+      register_code16(LCTL(LALT(LSFT(KC_3))));
+      break;
+  }
+}
+
 qk_tap_dance_action_t tap_dance_actions[] = {
   [_TD_PARENS] = ACTION_TAP_DANCE_DOUBLE(KC_LPRN, KC_RPRN),
   [_TD_BRACKS] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
@@ -143,4 +171,6 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [_TD_LARR]   = ACTION_TAP_DANCE_FN(dance_larr),
   [_TD_RARR]   = ACTION_TAP_DANCE_FN(dance_rarr),
   [_TD_SLASH_COMMENT] = ACTION_TAP_DANCE_DOUBLE(KC_SLASH, IJ_COMMENT),
+  [_TD_LMAGNET]   = ACTION_TAP_DANCE_FN(dance_lmagnet),
+  [_TD_RMAGNET]   = ACTION_TAP_DANCE_FN(dance_rmagnet),
 };
