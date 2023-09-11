@@ -11,10 +11,11 @@ void toggle_sticky_mod(uint16_t mod_keycode) {
 }
 
 // Modtap terms
-uint16_t NAV_SPC_TERM   = TAPPING_TERM + 20;
-uint16_t HR_ALT_TERM    = TAPPING_TERM + 30;
-uint16_t HR_LSHIFT_TERM = TAPPING_TERM - 20;
-uint16_t HR_RSHIFT_TERM = TAPPING_TERM + 20;
+uint16_t TERM_NAV_SPC   = TAPPING_TERM + 20;
+uint16_t TERM_HR_ALT    = TAPPING_TERM + 30;
+uint16_t TERM_HR_LSHIFT = TAPPING_TERM - 20;
+uint16_t TERM_HR_RSHIFT = TAPPING_TERM + 20;
+uint16_t TERM_TD_ARROWS = TAPPING_TERM * 2;
 
 // Combo terms
 uint16_t COMBO_TERM_KC_DOWN = COMBO_TERM + 50;
@@ -22,14 +23,17 @@ uint16_t COMBO_TERM_KC_DOWN = COMBO_TERM + 50;
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case NAV_SPC:
-      return NAV_SPC_TERM;
+      return TERM_NAV_SPC;
     case MOD_A:
     case MOD_O:
-      return HR_ALT_TERM;
+      return TERM_HR_ALT;
     case MOD_R:
-      return HR_LSHIFT_TERM;
+      return TERM_HR_LSHIFT;
     case MOD_I:
-      return HR_RSHIFT_TERM;
+      return TERM_HR_RSHIFT;
+    case TD_LARR:
+    case TD_RARR:
+      return TERM_TD_ARROWS;
     default:
       return TAPPING_TERM;
   }
