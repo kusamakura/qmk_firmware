@@ -139,13 +139,13 @@ void dance_rarr(qk_tap_dance_state_t *state, void *user_data) {
 void dance_lmagnet(qk_tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
-      register_code16(LCTL(LALT(KC_1)));
+      tap_code16(LCTL(LALT(KC_1)));
       break;
     case 2:
-      register_code16(LCTL(LALT(KC_2)));
+      tap_code16(LCTL(LALT(KC_2)));
       break;
     case 3:
-      register_code16(LCTL(LALT(KC_3)));
+      tap_code16(LCTL(LALT(KC_3)));
       break;
   }
 }
@@ -153,13 +153,13 @@ void dance_lmagnet(qk_tap_dance_state_t *state, void *user_data) {
 void dance_rmagnet(qk_tap_dance_state_t *state, void *user_data) {
   switch (state->count) {
     case 1:
-      register_code16(LCTL(LALT(LSFT(KC_1))));
+      tap_code16(LCTL(LALT(LSFT(KC_1))));
       break;
     case 2:
-      register_code16(LCTL(LALT(LSFT(KC_2))));
+      tap_code16(LCTL(LALT(LSFT(KC_2))));
       break;
     case 3:
-      register_code16(LCTL(LALT(LSFT(KC_3))));
+      tap_code16(LCTL(LALT(LSFT(KC_3))));
       break;
   }
 }
