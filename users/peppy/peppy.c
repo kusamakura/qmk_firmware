@@ -18,7 +18,8 @@ uint16_t TERM_HR_RSHIFT = TAPPING_TERM + 20;
 uint16_t TERM_TD_ARROWS = TAPPING_TERM * 2;
 
 // Combo terms
-uint16_t COMBO_TERM_KC_DOWN = COMBO_TERM + 50;
+uint16_t COMBO_TERM_KC_DOWN = COMBO_TERM + 80;
+uint16_t COMBO_TERM_KC_W    = COMBO_TERM + 120;
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
@@ -53,9 +54,11 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_combo_term(uint16_t index, combo_t *combo) {
   if (combo->keys[0] == KC_DOWN) {
     return COMBO_TERM_KC_DOWN;
+  } else if (combo->keys[0] == KC_W) {
+    return COMBO_TERM_KC_W;
+  } else {
+    return COMBO_TERM;
   }
-
-  return COMBO_TERM;
 }
 
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
