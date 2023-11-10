@@ -3,9 +3,9 @@
 #ifdef TAPPING_TERM
   #undef TAPPING_TERM
 #endif
-#define TAPPING_TERM 150
+#define TAPPING_TERM 170
 
 #ifdef DEBOUNCE
   #undef DEBOUNCE
 #endif
-#define DEBOUNCE 5
+#define DEBOUNCE 10
