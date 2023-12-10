@@ -13,7 +13,7 @@ void toggle_sticky_mod(uint16_t mod_keycode) {
 // Modtap terms
 uint16_t TERM_NAV_SPC   = TAPPING_TERM + 20;
 uint16_t TERM_HR_ALT    = TAPPING_TERM + 30;
-uint16_t TERM_HR_LSHIFT = TAPPING_TERM - 40;
+uint16_t TERM_HR_LSHIFT = TAPPING_TERM - 20; // - 20 for linear switches?
 uint16_t TERM_HR_RSHIFT = TAPPING_TERM + 20;
 uint16_t TERM_TD_ARROWS = TAPPING_TERM * 2;
 
