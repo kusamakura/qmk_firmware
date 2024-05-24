@@ -35,6 +35,7 @@ enum userspace_custom_keycodes {
   TD_SLASH_COMMENT,
   TD_LMAGNET,
   TD_RMAGNET,
+  TD_CMAGNET,
   NEW_SAFE_RANGE
 };
 
@@ -48,6 +49,7 @@ enum {
   _TD_SLASH_COMMENT, // Tap = /, double tap = LGUI(KC_SLASH)
   _TD_LMAGNET, // Tap = left 1/3, double tap = left 1/2, triple tap = left 2/3
   _TD_RMAGNET, // Tap = right 1/3, double tap = right 1/2, triple tap = right 2/3
+  _TD_CMAGNET, // Tap = center 1/3, double tap = center 2/3, triple tap = max
 };
 
 // General keycodes
@@ -80,6 +82,7 @@ enum {
 #define TD_SLASH_COMMENT TD(_TD_SLASH_COMMENT)
 #define TD_LMAGNET       TD(_TD_LMAGNET)
 #define TD_RMAGNET       TD(_TD_RMAGNET)
+#define TD_CMAGNET       TD(_TD_CMAGNET)
 
 // Shortcuts
 #define KC_BWORD          LALT(KC_BACKSPACE)
@@ -94,6 +97,17 @@ enum {
 #define KC_PASTE          LGUI(KC_V)
 #define KC_ENDASH         LALT(KC_MINUS)
 #define KC_EMDASH         LSA(KC_MINUS)
+// Divvy
+#define DV_L1             LCTL(LALT(KC_1)) // left 2/3
+#define DV_L2             LCTL(LALT(KC_2)) // left 1/2
+#define DV_L3             LCTL(LALT(KC_3)) // left 1/3
+#define DV_R1             LCTL(LALT(LSFT(KC_1))) // right 2/3
+#define DV_R2             LCTL(LALT(LSFT(KC_2))) // right 1/2
+#define DV_R3             LCTL(LALT(LSFT(KC_3))) // right 1/3
+#define DV_C1             LCTL(LALT(LSFT(KC_6))) // center 1/3
+#define DV_C2             LCTL(LALT(LSFT(KC_7))) // center 2/3
+#define DV_C3             LCTL(LALT(LSFT(KC_8))) // max
+// IntelliJ
 #define IJ_COMMENT        LGUI(KC_SLASH)
 #define IJ_BUILD          LGUI(KC_F9)
 #define IJ_CURSOR_TEST    LCTL(LSFT(KC_R))
