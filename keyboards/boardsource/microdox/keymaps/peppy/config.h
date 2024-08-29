@@ -1,6 +1,6 @@
 #pragma once
 
-#define MASTER_RIGHT
+#define MASTER_LEFT
 
 #ifdef TAPPING_TERM
 #  undef TAPPING_TERM
